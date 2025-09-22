@@ -1,6 +1,6 @@
 extends EditorInspectorPlugin
 
-var callable_property = preload("res://addons/@export_plus/scripts/callable_property.gd").new()
+var callable_property : EditorProperty = preload("res://addons/@export_plus/scripts/callable_property.gd").new()
 
 
 func _can_handle(object: Object) -> bool:
@@ -11,5 +11,4 @@ func _parse_property(object: Object, type: Variant.Type, name: String, hint_type
 		TYPE_CALLABLE:
 			add_property_editor(name, callable_property)
 			return true
-		
 	return false
